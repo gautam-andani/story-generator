@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Story Input</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button[type="submit"],
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        button[type="submit"]:hover,
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="POST" action="story/">
+        {% csrf_token %}
+        
+        <!-- For Sentence Starter -->
+        <label for="sentence_starter">Enter a Sentence Starter:</label>
+        <input type="text" name="sentence_starter" id="sentence_starter"><br><br>
+
+        <!-- For Character -->
+        <label for="character">Enter a Character:</label>
+        <input type="text" name="character" id="character"><br><br>
+
+        <!-- For Place -->
+        <label for="place">Enter a Place:</label>
+        <input type="text" name="place" id="place"><br><br>
+
+        <!-- For Second Character -->
+        <label for="second_character">Enter a Second Character:</label>
+        <input type="text" name="second_character" id="second_character"><br><br>
+
+        <!-- For Character Age -->
+        <label for="character_age">Enter Character Age Description:</label>
+        <input type="text" name="character_age" id="character_age"><br><br>
+
+        <!-- For Activity -->
+        <label for="activity">Enter an Activity:</label>
+        <input type="text" name="activity" id="activity"><br><br>
+
+        <!-- For Plot -->
+        <label for="plot">Enter a Plot Description:</label>
+        <input type="text" name="plot" id="plot"><br><br>
+
+        <!-- For Story Time -->
+        <label for="story_time">Enter a Story Time Description:</label>
+        <input type="text" name="story_time" id="story_time"><br><br>
+
+        <button type="submit">Generate Story</button>
+    </form>
+    
+    <button onclick="window.location.href='story/'">Generate Random Story</button>
+
+</body>
+</html>
